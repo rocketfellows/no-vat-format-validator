@@ -1,22 +1,21 @@
 <?php
 
-// TODO: set namespace
-namespace unit;
+namespace rocketfellows\NOVatFormatValidator\tests\unit;
 
-class CountryVatFormatValidatorTest extends TestCase
+use PHPUnit\Framework\TestCase;
+
+class NOVatFormatValidatorTest extends TestCase
 {
     /**
-     * TODO: set type
-     * @var
+     * @var NOVatFormatValidator
      */
     private $validator;
 
-    /**
-     * TODO: setup validator for test
-     */
     protected function setUp(): void
     {
-        $this->validator = new CountryVatFormatValidator();
+        parent::setUp();
+
+        $this->validator = new NOVatFormatValidator();
     }
 
     /**
