@@ -24,7 +24,11 @@ class NOVatFormatValidatorTest extends TestCase
      */
     public function testValidationResult(string $vatNumber, bool $isValid): void
     {
-        $this->assertEquals($isValid, $this->validator->isValid($vatNumber));
+        $this->assertEquals(
+            $isValid,
+            $this->validator->isValid($vatNumber),
+            sprintf('Data name: %s; Test data: %s', $this->dataName(), json_encode($this->getProvidedData()))
+        );
     }
 
     public function getVatNumbersProvidedData(): array
