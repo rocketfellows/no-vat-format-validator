@@ -3,6 +3,7 @@
 namespace rocketfellows\NOVatFormatValidator\tests\unit;
 
 use PHPUnit\Framework\TestCase;
+use rocketfellows\NOVatFormatValidator\NOVatFormatValidator;
 
 class NOVatFormatValidatorTest extends TestCase
 {
