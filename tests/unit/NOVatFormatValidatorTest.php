@@ -115,6 +115,14 @@ class NOVatFormatValidatorTest extends TestCase
                 'isValid' => true,
             ],
             [
+                'vatNumber' => 'DE234154877MVA',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'DE234154877',
+                'isValid' => false,
+            ],
+            [
                 'vatNumber' => 'NO234154879MVA',
                 'isValid' => false,
             ],
