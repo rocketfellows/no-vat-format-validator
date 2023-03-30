@@ -1,52 +1,36 @@
-# Country vat format validator template description
-
-## Implementation steps
-
-1. Create repository use template for name: <ISO-3166-standard-alpha2-code>-vat-format-validator
-2. Update composer.json **name** attribute: rocketfellows/<ISO-3166-standard-alpha2-code>-vat-format-validator
-3. Update composer.json with autoload and autoload-dev sections by pattern:
-```php
-   "autoload": {
-        "psr-4": {
-            "rocketfellows\\<ISO-3166-standard-alpha2-code>VatFormatValidator\\": "src/"
-        }
-   },
-   "autoload-dev": {
-        "psr-4": {
-            "rocketfellows\\<ISO-3166-standard-alpha2-code>VatFormatValidator\\tests\\": "tests/"
-        }
-   }
-```
-3. Run docker-deploy.sh
-4. Implement unit test in test/unit directory
-5. Implement direct validator
-
-# Templated readme
-
-# <Country> vat format validator
+# Norway vat format validator
 
 ![Code Coverage Badge](./badge.svg)
 
-This component provides <Country> vat number format validator.
+This component provides Norway vat number format validator.
 
 Implementation of interface **rocketfellows\CountryVatFormatValidatorInterface\CountryVatFormatValidatorInterface**
 
 Depends on https://github.com/rocketfellows/country-vat-format-validator-interface
 
+## Vat number validation description
+
+The technical construction of the number specifies a modulus 11 check digit at the end.
+The weighting factors are 3, 2, 7, 6, 5, 4, 3, 2 calculated from the first digit.
+The digits are thus multiplied by the weighting factors and the product sum divided by 11. The leftover
+from the division is subtracted by 11 and the result becomes the MOD11 checksum digit.
+
 ## Installation
 
 ```shell
-composer require rocketfellows/<ISO-3166-standard-alpha2-code>-vat-format-validator
+composer require rocketfellows/no-vat-format-validator
 ```
 
 ## Usage example
 
-Valid <Country> vat number:
+Valid Norway vat number (valid expected format and checksum digit):
 
 ```php
-$validator = new <Country>VatFormatValidator();
-$validator->isValid('');
-$validator->isValid('');
+$validator = new NOVatFormatValidator();
+$validator->isValid('NO234154877MVA');
+$validator->isValid('NO234154877');
+$validator->isValid('234154877MVA');
+$validator->isValid('234154877');
 ```
 
 Returns:
@@ -54,17 +38,27 @@ Returns:
 ```shell
 true
 true
+true
+true
 ```
 
-Invalid <Country> vat number:
+Invalid Norway vat number (invalid format or checksum digit):
 
 ```php
-$validator = new <Country>VatFormatValidator();
-$validator->isValid('');
+$validator = new NOVatFormatValidator();
+$validator->isValid('DE234154877MVA'); // invalid format
+$validator->isValid('DE234154877'); // invalid format
+$validator->isValid('NO234154879MVA'); // invalid checksum digit
+$validator->isValid('NO234154879'); // invalid checksum digit
+$validator->isValid('234154879'); // invalid checksum digit
 $validator->isValid('');
 ```
 
 ```shell
+false
+false
+false
+false
 false
 false
 ```
@@ -74,4 +68,3 @@ false
 Welcome to pull requests. If there is a major changes, first please open an issue for discussion.
 
 Please make sure to update tests as appropriate.
-

@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1648587867">
-  <project timestamp="1648587867">
-    <metrics files="0" loc="0" ncloc="0" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+<coverage generated="1680193909">
+  <project timestamp="1680193909">
+    <file name="/app/src/NOVatFormatValidator.php">
+      <class name="rocketfellows\NOVatFormatValidator\NOVatFormatValidator" namespace="global">
+        <metrics complexity="7" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="38" elements="43" coveredelements="43"/>
+      </class>
+      <line num="13" type="method" name="isValidFormat" visibility="protected" complexity="3" crap="3" count="57"/>
+      <line num="15" type="stmt" count="57"/>
+      <line num="16" type="stmt" count="17"/>
+      <line num="19" type="stmt" count="40"/>
+      <line num="20" type="stmt" count="20"/>
+      <line num="23" type="stmt" count="20"/>
+      <line num="26" type="method" name="isVatNumberMatchPattern" visibility="private" complexity="1" crap="1" count="57"/>
+      <line num="28" type="stmt" count="57"/>
+      <line num="31" type="method" name="isVatNumberChecksumValidationPassed" visibility="private" complexity="1" crap="1" count="40"/>
+      <line num="33" type="stmt" count="40"/>
+      <line num="34" type="stmt" count="40"/>
+      <line num="35" type="stmt" count="40"/>
+      <line num="36" type="stmt" count="40"/>
+      <line num="37" type="stmt" count="40"/>
+      <line num="38" type="stmt" count="40"/>
+      <line num="39" type="stmt" count="40"/>
+      <line num="40" type="stmt" count="40"/>
+      <line num="41" type="stmt" count="40"/>
+      <line num="42" type="stmt" count="40"/>
+      <line num="43" type="stmt" count="40"/>
+      <line num="44" type="stmt" count="40"/>
+      <line num="46" type="stmt" count="40"/>
+      <line num="54" type="method" name="getCheckingVatNumberDigitsMultipliedByWeightFactor" visibility="private" complexity="1" crap="1" count="40"/>
+      <line num="58" type="stmt" count="40"/>
+      <line num="59" type="stmt" count="40"/>
+      <line num="60" type="stmt" count="40"/>
+      <line num="61" type="stmt" count="40"/>
+      <line num="62" type="stmt" count="40"/>
+      <line num="63" type="stmt" count="40"/>
+      <line num="64" type="stmt" count="40"/>
+      <line num="71" type="method" name="getVatNumberDigits" visibility="private" complexity="1" crap="1" count="40"/>
+      <line num="73" type="stmt" count="40"/>
+      <line num="74" type="stmt" count="40"/>
+      <line num="75" type="stmt" count="40"/>
+      <line num="76" type="stmt" count="40"/>
+      <line num="77" type="stmt" count="40"/>
+      <line num="78" type="stmt" count="40"/>
+      <line num="79" type="stmt" count="40"/>
+      <line num="80" type="stmt" count="40"/>
+      <line num="81" type="stmt" count="40"/>
+      <line num="82" type="stmt" count="40"/>
+      <line num="83" type="stmt" count="40"/>
+      <line num="84" type="stmt" count="40"/>
+      <metrics loc="87" ncloc="78" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="38" elements="43" coveredelements="43"/>
+    </file>
+    <metrics files="1" loc="87" ncloc="78" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="38" elements="43" coveredelements="43"/>
   </project>
 </coverage>
